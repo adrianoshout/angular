@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <h3>
+        <div class="input text-center">Formulário de Login</div>
+    </h3>
+        <div class="input"><input type="text" class="form-control" [(ngModel)] = "login.email" placeholder="Email" aria-label="Usuário" required></div>
+        <div class="input"><input type="password" class="form-control" [(ngModel)] = "login.senha" placeholder="Senha" aria-label="Usuário" required></div>
+        <div class="input">
+             <button (click)="logar()" type="submit" class="btn btn-primary form-control">Entrar</button>
+        </div>
+        
+    </div>
+  </div>

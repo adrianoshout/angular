@@ -1,0 +1,28 @@
+
+<mat-card class="mat-elevation-z4">
+    <mat-card-title>Lista de Categorias</mat-card-title>
+    <a routerLink="/home/novacategoria">
+      <button type="button" class="btn btn-success">Nova Categoria</button>
+    </a>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Acão</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let categoria of categorias">
+            <th>{{categoria.id}}</th>
+            <th>{{categoria.nome}}</th>
+            <th>
+                <button type="button" (click)=editar(categoria.id) class="btn btn-warning">Editar</button>
+                <button type="button" (click)=remover(categoria.id) class="btn btn-danger">Remover</button>
+               
+            </th>
+      </tr>
+    </tbody>
+  </table>
+</mat-card>

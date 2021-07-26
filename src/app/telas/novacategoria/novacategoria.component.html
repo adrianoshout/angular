@@ -1,0 +1,7 @@
+<mat-card>
+    <mat-card-title>Nova Categoria</mat-card-title>
+    <div class="input"><input type="text" [(ngModel)] = "categoria.nome"  class="form-control" placeholder="Nome" required></div>
+    <div class="input">
+         <button type="submit" (click)='save()' class="btn btn-primary">Cadastrar</button>
+    </div>
+</mat-card>
