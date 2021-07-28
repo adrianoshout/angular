@@ -40,5 +40,15 @@
         empty: boolean;
     }
 
+    export interface TermosDeUso {
+        id: number;
+        description: string;
+    }
+
+    export interface Politica {
+        id: number;
+        description: string;
+    }
+
 
 

@@ -11,4 +11,12 @@ export class BaseUrls {
     public static get baseCategoria(): string {
         return this.base + 'categorias';
     }
+
+    public static get baseTermosDeUso(): string {
+        return this.base + 'terms_use';
+    }
+
+    public static get basePoliticaDePrivacidade(): string {
+        return this.base + 'privacy_policy';
+    }
 }

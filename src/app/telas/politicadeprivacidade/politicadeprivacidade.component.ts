@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PoliticaService } from 'src/app/servicos/politica.service';
+import { Politica } from '../categorias/model';
 
 @Component({
   selector: 'app-politicadeprivacidade',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PoliticadeprivacidadeComponent implements OnInit {
 
-  constructor() { }
+  politica: Politica = {
+    id: 0,
+    description: ''
+  }
+
+  constructor(private politicaService: PoliticaService) { }
 
   ngOnInit(): void {
+    this.politicaService.buscarPolitica().subscribe(res => {
+      this.politica = res
+    })
   }
 
 }
