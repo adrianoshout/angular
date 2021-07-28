@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Categoria } from '../telas/categorias/categoria.model';
 import { Observable } from 'rxjs';
 import { BaseUrls } from './base-urls';
+import { Page } from '../telas/categorias/model';
 
 
 @Injectable({
@@ -10,11 +11,14 @@ import { BaseUrls } from './base-urls';
 })
 export class CategoriasService {
 
-
   constructor(private http: HttpClient) { }
 
   findAll(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(BaseUrls.baseCategoria)
+  }
+
+  findAllPage(page: number, qtd: number): Observable<Page> {
+      return this.http.get<Page>(BaseUrls.baseCategoria + "/page?page="+ page + "&qtd=" + qtd)
   }
 
   findById(id: string){

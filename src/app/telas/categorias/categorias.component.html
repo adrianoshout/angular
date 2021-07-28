@@ -14,7 +14,7 @@
     </thead>
     <tbody>
 
-        <tr *ngFor="let categoria of categorias">
+        <tr *ngFor="let categoria of categorias | paginate: { itemsPerPage: 3, currentPage: paginaAtual }; let i = index">
             <th>{{categoria.id}}</th>
             <th>{{categoria.nome}}</th>
             <th>
@@ -25,4 +25,6 @@
       </tr>
     </tbody>
   </table>
+  <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
+  nextLabel="Próximo"></pagination-controls>
 </mat-card>

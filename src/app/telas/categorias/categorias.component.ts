@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoriasService } from 'src/app/servicos/categorias.service';
 import { Categoria } from './categoria.model';
 import { Router } from '@angular/router';
+import { Page } from './model';
 
 @Component({
   selector: 'app-categorias',
@@ -13,9 +14,15 @@ export class CategoriasComponent implements OnInit {
   constructor(private router: Router, private categoriaService: CategoriasService) { }
 
   categorias: Categoria[] = []; 
+  page!: Page;
+
+
+  public paginaAtual: number = 0
+  public itemsPerPage: number = 10
+  
 
   ngOnInit(): void {
-    this.findAll();
+    this.pagefindAll(this.paginaAtual, this.itemsPerPage);
   }
 
   findAll(){
@@ -24,6 +31,15 @@ export class CategoriasComponent implements OnInit {
       console.log(categorias)
     })
   }
+
+  pagefindAll(page: number, qtd: number){
+    this.categoriaService.findAllPage(page, qtd).subscribe(page => {
+      this.page = page;
+      this.categorias = page['content']
+      console.log(page['totalElements'])
+    })
+  }
+
 
   remover(id: number):void {
     confirm("Tem certeza que deseja remover a categoria?")
@@ -37,6 +53,10 @@ export class CategoriasComponent implements OnInit {
 
   editar(id:number){
       this.router.navigate(['home/editarcategoria/' + id])
+  }
+
+  pageChange(){
+    console.log(event)
   }
 
 }

@@ -13,6 +13,10 @@ import { MatCardModule } from '@angular/material/card';
 import { NovacategoriaComponent } from './telas/novacategoria/novacategoria.component';
 import { SairComponent } from './telas/sair/sair.component';
 import { EditarcategoriaComponent } from './telas/editarcategoria/editarcategoria.component'
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ContatoComponent } from './telas/contato/contato.component';
+import { TermosdeusoComponent } from './telas/termosdeuso/termosdeuso.component';
+import { PoliticadeprivacidadeComponent } from './telas/politicadeprivacidade/politicadeprivacidade.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +27,18 @@ import { EditarcategoriaComponent } from './telas/editarcategoria/editarcategori
     CategoriasComponent,
     NovacategoriaComponent,
     SairComponent,
-    EditarcategoriaComponent
+    EditarcategoriaComponent,
+    ContatoComponent,
+    TermosdeusoComponent,
+    PoliticadeprivacidadeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    NgxPaginationModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
