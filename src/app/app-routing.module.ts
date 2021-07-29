@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './acount/shared/auth.guard';
 import { CategoriasComponent } from './telas/categorias/categorias.component';
+import { ContatoComponent } from './telas/contato/contato.component';
 import { EditarcategoriaComponent } from './telas/editarcategoria/editarcategoria.component';
 import { HomeComponent } from './telas/home/home.component';
 import { LoginComponent } from './telas/login/login.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {  path: '',  component: LoginComponent },
   {  path: 'login',  component: LoginComponent },
   {  path: 'termosdeuso',  component: TermosdeusoComponent },
+  {  path: 'contato',  component: ContatoComponent },
   {  path: 'politicadeprivacidade',  component: PoliticadeprivacidadeComponent },
   {  path: 'home',  component: HomeComponent, children: [
 

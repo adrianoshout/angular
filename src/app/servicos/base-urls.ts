@@ -4,6 +4,10 @@ export class BaseUrls {
         return 'http://localhost:8080/';
     }
 
+    public static get baseContato(): string {
+        return this.base + 'contact';
+    }
+
     public static get baseLogin(): string {
         return this.base + 'login';
     }

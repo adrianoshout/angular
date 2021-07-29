@@ -1,1 +1,30 @@
-<p>contato works!</p>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <a routerLink="">
+            <img src="assets/logo.png" alt="">
+        </a>
+    </div>   
+       <div class="content">
+        
+         <div class="conteudo">
+            <div class="row">
+                <input type="text" class="form-control" placeholder="Nome" [(ngModel)]='contato.name' required>
+            </div>
+            <div class="row">
+                <input type="text" class="form-control" placeholder="Email" [(ngModel)]='contato.email' required>
+            </div>
+            <div class="row">
+                <textarea class="form-control" rows="3" placeholder="Descrição" [(ngModel)]='contato.message' required></textarea>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" (click)="save()" class="btn btn-primary form-control">Enviar</button>
+                </div>
+                <div class="col">
+                    <a routerLink="">
+                        <button type="submit" class="btn btn-danger form-control">Cancelar</button>
+                    </a>
+                </div>
+            </div>  
+        </div>
+  </div>

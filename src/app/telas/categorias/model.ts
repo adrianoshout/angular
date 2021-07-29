@@ -1,5 +1,4 @@
 
-
     export interface Categoria {
         id: number;
         nome: string;
@@ -48,6 +47,12 @@
     export interface Politica {
         id: number;
         description: string;
+    }
+
+    export interface Contato {
+        email: string;
+        message: string;
+        name: string;
     }
 
 
